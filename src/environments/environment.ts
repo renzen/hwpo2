@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  envName: 'staging',
+  endpointCares: 'http://localhost:7488/ConsentPortal_Method.svc',
+  endpointCSP: ''
 };
 
 /*
