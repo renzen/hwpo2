@@ -24,3 +24,8 @@ h1 { font-family: Lato; font-size: 24px; font-style: normal; font-variant: norma
     border: 1px solid #4a9e4e;
     width: 100%;
 }
+
+.form-group.container.success {
+    margin: 0 !important;
+    padding: 0;
+}

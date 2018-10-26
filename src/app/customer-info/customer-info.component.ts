@@ -32,7 +32,7 @@ export class CustomerInfoComponent implements OnInit {
 
     this.customerInform = this.formBuilder.group({
       firstName: ['', Validators.required],
-      middleName: ['', Validators.required],
+      middleName: [],
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       emailConfirm: ['', [Validators.required, compareValidator('email')]],
