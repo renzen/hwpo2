@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   envName: 'staging',
-  endpointCares: 'http://localhost:7488/ConsentPortal_Method.svc',
+  endpointCares: 'http://10.31.81.7/ConsentPortal_SVC/ConsentPortal_Method.svc',
   endpointCSP: ''
 };
 
