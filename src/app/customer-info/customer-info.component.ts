@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { compareValidator } from '../shared/compare-validator.directive';
+import { HttpService } from '../core/http.service';
+import { OTPGenerator } from '../config/app-model.config';
+import { ConfigService } from '../core/config.service';
+import { LoggerService } from '../core/logger.service';
 
 @Component({
   selector: 'app-customer-info',
@@ -15,12 +19,16 @@ export class CustomerInfoComponent implements OnInit {
     loading =  false;
     submitted = false;
     isValidFormSubmitted = false;
+    OTP : OTPGenerator;
+    
 
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    
+    private http: HttpService,
+    private apiService: ConfigService,
+    private logger: LoggerService
     ) { }
 
   ngOnInit() {
@@ -46,8 +54,6 @@ export class CustomerInfoComponent implements OnInit {
       landlineNo: ['', Validators.required],
       relationship: ['', Validators.required],
       Remarks:[],
-      
-  
     })
     
   }
@@ -103,7 +109,7 @@ export class CustomerInfoComponent implements OnInit {
 
 
   onSubmit(model:any) {
-    this.submitted = true;
+   
     alert(JSON.stringify(model));
 
     // stop here if form is invalid
@@ -116,11 +122,14 @@ export class CustomerInfoComponent implements OnInit {
     // 
     this.isValidFormSubmitted = true;
     this.loading = true;
-  //  this.router.navigate(['/customer-otp']);
+    this.http.postCares(this.apiService.api.cares.getOTP, this.OTP, true).subscribe(
+      res => {
+        this.logger.log(res);
+      }
+    );
+    this.router.navigate(['/customer-otp']);
 
     console.log(this.customerInform);
-
-    
 }
 
 }

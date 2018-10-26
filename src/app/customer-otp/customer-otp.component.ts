@@ -36,7 +36,7 @@ get otpNumber() {
 
 
 onSubmit() {
-  this.submitted = true;
+  
 
   // stop here if form is invalid
   if (this.OtpForm.invalid) {
