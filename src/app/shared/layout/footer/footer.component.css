@@ -1,0 +1,112 @@
+
+
+/* NEW FOR FOOTER*/
+.footer-block {
+    padding-bottom: 40px;
+}
+
+.footer-block .container-b1170 {
+    position: relative;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.footer-block .links a {
+    margin: 0;
+    margin-right: 15px;
+}
+
+.footer-block a {
+    color: #7a7a7a;
+}
+
+.footer-block .social-media {
+    padding: 10px 0;
+    /* text-align: center;
+    position: absolute;
+    right: 0; */
+}
+
+
+   .footer-block .links a
+  {
+    margin:0;
+    margin-right: 15px;
+  }
+
+  .footer-block .copyright p {text-align: left;}
+
+
+  .footer-block .container-b1170
+{
+  position: relative;
+}
+
+  .footer-block
+{
+  padding-bottom: 40px;
+}
+  .social-media a 
+{
+  display: inline-block;
+  text-indent: -1000px;
+  overflow: hidden;
+  height: 32px;
+  width: 32px;
+  margin: 0px 5px;
+  float:none;
+
+}
+  .social-media a.facebook{background-image: url(https://pldthome.com/assets/images/social/facebook.png)}
+  .social-media a.twitter{background-image: url(https://pldthome.com/assets/images/social/twitter.png)}
+  .social-media a.pinterest{background-image: url(https://pldthome.com/assets/images/social/pinterest.png)}
+  .social-media a.googleplus{background-image: url(https://pldthome.com/assets/images/social/googleplus.png)}
+  .social-media a.instagram{background-image: url(https://pldthome.com/assets/images/social/instagram.png)}
+  .social-media a.youtube{background-image: url(https://pldthome.com/assets/images/social/youtube.png)}
+
+  .footer-block {
+    background: #1c1c1c;
+    
+}
+
+.footer-block {
+    padding-bottom: 40px;
+}
+
+
+.footer-block {
+    padding: 15px 0;
+}
+
+.footer-block .copyright {
+    float: left;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.social-media {
+    width: 170px;
+    float: right;
+    /* text-align: right; */
+}
+
+@media (max-width: 979px) {
+
+    .footer-block .social-media
+  {
+    position: relative;
+
+  }
+    .footer-block .copyright p
+  {
+   
+    text-align: center;
+    padding:0;
+  }
+    .footer-block .copyright
+  {
+    float:none;
+
+  }
+
+}

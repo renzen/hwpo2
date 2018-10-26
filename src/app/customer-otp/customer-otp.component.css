@@ -1,0 +1,10 @@
+.middle-inside{margin: 0 auto;}
+.customer-otp{min-height: 300px;padding: 20px;}
+.customer-otp h4{margin: 0 auto;text-align: center;}
+.marleft{ margin-left: 250px;}
+.form-inline{margin-top:70px;}
+.mid-box{width: 230px}
+.invalid-feedback {
+    position: absolute;
+    margin-top: 33px;
+}

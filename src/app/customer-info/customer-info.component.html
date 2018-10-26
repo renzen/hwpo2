@@ -1,3 +1,231 @@
-<p>
-  customer-info works!
-</p>
+<div class="container">
+    <h2 class="unit" id="personalDetailsHeader">Your Details</h2>
+    <!-- <a [routerLink]="['/customer-otp']" class="btn btn-link">test</a> -->
+    <br>
+
+
+    <div class="row">
+
+
+
+        <!-- edit form column -->
+        <div class="col-md-12 personal-info">
+
+                <legend id="PersonalDetails"><span>Personal Details</span></legend>
+                <hr>
+                <br>
+
+            <form [formGroup]="customerInform" (ngSubmit)="onSubmit(customerInform.value)">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">First Name:</label>
+                            <input type="text" class="form-control" formControlName="firstName">
+                            <div class="text-danger" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+                                First Name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">Middle Name:</label>
+                            <input type="text" class="form-control" formControlName="middleName">
+                            <div class="text-danger" *ngIf="middleName.invalid && (middleName.dirty || middleName.touched)">
+                                Middle name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">Last Name:</label>
+                            <input type="text" class="form-control" formControlName="lastName">
+                            <div class="text-danger" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                                Last name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">Email:</label>
+                            <input type="email" class="form-control" formControlName="email">
+                            <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                                Email is required
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">Confirm Email:</label>
+                            <input class="form-control" type="email" formControlName="emailConfirm">
+                            <div class="text-danger" *ngIf="emailConfirm.invalid && (emailConfirm.dirty || emailConfirm.touched)">
+                                <div *ngIf="emailConfirm.errors['required']">Email confirm is required</div>
+                                <div *ngIf="emailConfirm.errors['compare']">Email confirm do not match</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!-- Address-->
+                    <legend id="instalationDetails"><span>Installation Details</span></legend>
+                    <hr>
+                    <br>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">No./Blk/Lot:</label>
+                            <input type="text" class="form-control" formControlName="nbl">
+                            <div class="text-danger" *ngIf="nbl.invalid && (nbl.dirty || nbl.touched)">
+                                    No./Blk/Lot name is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">Street:</label>
+                            <input type="text" class="form-control" formControlName="street">
+                            <div class="text-danger" *ngIf="street.invalid && (street.dirty || street.touched)">
+                                    Street name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">Subdivision/Village/Bldg.Name:</label>
+                            <input type="text" class="form-control" formControlName="svb">
+                            <div class="text-danger" *ngIf="svb.invalid && (svb.dirty || svb.touched)">
+                                Subdivision/Village/Bldg.Name name is required
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">Province:</label>
+                            <input type="text" class="form-control" formControlName="province">
+                            <div class="text-danger" *ngIf="province.invalid && (province.dirty || province.touched)">
+                                    Province name is required
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">City:</label>
+                            <input type="text" class="form-control" formControlName="city">
+                            <div class="text-danger" *ngIf="city.invalid && (city.dirty || city.touched)">
+                             City name is required
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">Zip Code:</label>
+                            <input type="text" class="form-control" formControlName="zipCode">
+                            <div class="text-danger" *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)">
+                                Zip Code name is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+
+                    <legend id="primaryContactDetails"><span>Primary Contact Details</span></legend>
+                    <hr>
+                    <br>
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">Mobile No.:</label>
+                            <input type="text" class="form-control" formControlName="mobileNo">
+                            <div class="text-danger" *ngIf="mobileNo.invalid && (mobileNo.dirty || mobileNo.touched)">
+                                    Mobile No. name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <label class="control-label">Landline No.:</label>
+                            <input type="text" class="form-control" formControlName="landlineNo">
+                            <div class="text-danger" *ngIf="landlineNo.invalid && (landlineNo.dirty || landlineNo.touched)">
+                                Landline No. name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="form-group">
+                            <div class="select-container">
+                                <label class="control-label">How are you related? </label>
+                                <select class="RelationshipToOwner form-control" id="secondaryRelationship"
+                                    formControlName="relationship" [ngClass]="{ 'is-invalid': submitted && f.relationship.errors }">
+
+                                    <option disabled="disabled">Select Relationship</option>
+                                    <option value="Child">Child</option>
+                                    <option value="Customer">Customer</option>
+                                    <option value="Others">Others</option>
+                                    <option value="Parent">Parent</option>
+                                    <option value="Relative">Relative</option>
+                                    <option value="Spouse">Spouse</option>
+                                </select>
+                                <div *ngIf="relationship.invalid && (relationship.dirty || relationship.touched)" class="text-danger">
+                                    <div class="text-danger" *ngIf="relationship.invalid && (relationship.dirty || relationship.touched)">Relationship
+                                        is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <legend id="primaryContactDetails"><span>Help Us Find You <small>(Optional)</small></span></legend>
+                    <div class="">
+
+                        <label class="control-label">(Landmark/PLDT Landline number nearest your residence/Special
+                            Instructions/Other requests)</label>
+                        <textarea id="Remarks" name="Remarks" formControlName="Remarks" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+
+
+
+                <!-- <button [disabled]="OtpForm.invalid" class="btn btn-primary" style="float:right">Submit</button> -->
+
+                <div class="form-group">
+                    <button [disabled]="customerInform.invalid" class="btn btn-primary" style="float:right">Register</button>
+                    <p *ngIf="isValidFormSubmitted" [ngClass]="'success'">
+                        Form submitted successfully.
+                    </p>
+                    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <div class="container">
+            <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Form Status: {{ customerInform.status }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> Form value</h6>
+                        <pre>{{ customerInform.value | json }}</pre>
+                    </div>
+                </div>
+
+    </div>
