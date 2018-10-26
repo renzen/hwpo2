@@ -36,11 +36,12 @@ export class HttpService {
 
     if(options){
       
-      const headers = new Headers({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
-      headers.append('Access-Control-Allow-Methods', 'POST, PUT, DELETE');
-      headers.append('Accept','application/json');
-      headers.append('Access-Control-Max-Age','1728000');
-      headers.append('Access-Control-Allow-Headers', 'Content-Type, Accept');
+      const headers = new Headers({ 'Content-Type': 'application/json' });
+      // headers.append('Access-Control-Allow-Origin', '*');
+      // headers.append('Access-Control-Allow-Methods', 'POST, PUT, DELETE');
+      // headers.append('Accept','application/json');
+      // headers.append('Access-Control-Max-Age','1728000');
+      // headers.append('Access-Control-Allow-Headers', 'Content-Type, Accept');
 
       let httpOptions = new RequestOptions({ headers: headers });
 
