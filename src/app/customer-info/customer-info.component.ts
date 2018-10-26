@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive, ElementRef, Renderer } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { compareValidator } from '../shared/compare-validator.directive';
@@ -6,6 +6,7 @@ import { HttpService } from '../core/http.service';
 import { OTPGenerator } from '../config/app-model.config';
 import { ConfigService } from '../core/config.service';
 import { LoggerService } from '../core/logger.service';
+
 
 @Component({
   selector: 'app-customer-info',
@@ -21,8 +22,6 @@ export class CustomerInfoComponent implements OnInit {
     isValidFormSubmitted = false;
     OTP : OTPGenerator;
     
-
-
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -37,12 +36,11 @@ export class CustomerInfoComponent implements OnInit {
   }
 
   createCustomer(){
-
     this.customerInform = this.formBuilder.group({
       firstName: ['', Validators.required],
       middleName: [],
       lastName: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       emailConfirm: ['', [Validators.required, compareValidator('email')]],
       nbl: ['', Validators.required],
       svb: ['', Validators.required],
@@ -109,15 +107,13 @@ export class CustomerInfoComponent implements OnInit {
 
 
   onSubmit(model:any) {
-   
     alert(JSON.stringify(model));
-
     // stop here if form is invalid
     if (this.customerInform.invalid) {
         return;
     }
 
-    
+
     // this.customerInform.value()
     // 
     this.isValidFormSubmitted = true;

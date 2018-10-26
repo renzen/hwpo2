@@ -55,10 +55,11 @@
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
                             <label class="control-label">Email:</label>
-                            <input type="email" class="form-control" formControlName="email">
+                            <input type="email" class="form-control" formControlName="email" preventCutCopyPaste>
                             <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
                                 Email is required
                             </div>
+                            <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">Email must be a valid email address</div>
                         </div>
                     </div>
 
@@ -66,7 +67,7 @@
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
                             <label class="control-label">Confirm Email:</label>
-                            <input class="form-control" type="email" formControlName="emailConfirm">
+                            <input class="form-control" type="email" formControlName="emailConfirm" preventCutCopyPaste>
                             <div class="text-danger" *ngIf="emailConfirm.invalid && (emailConfirm.dirty || emailConfirm.touched)">
                                 <div *ngIf="emailConfirm.errors['required']">Email confirm is required</div>
                                 <div *ngIf="emailConfirm.errors['compare']">Email confirm do not match</div>

@@ -20,7 +20,9 @@ import { LoggerService } from './core/logger.service';
 import { HttpService } from './core/http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { CompareValidatorDirective } from './shared/compare-validator.directive'
+import { CompareValidatorDirective } from './shared/compare-validator.directive';
+import { CopyDirective } from './shared/prevent-ccp.directive';
+
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { CompareValidatorDirective } from './shared/compare-validator.directive'
     FooterComponent,
     BannerComponent,
     CompareValidatorDirective,
+    CopyDirective,
   ],
   imports: [
     BrowserModule,
