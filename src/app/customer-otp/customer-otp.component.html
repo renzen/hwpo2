@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+
+    <!-- edit form column -->
+    <div class="col-md-12 customer-otp">
+      <h4>We Sent a one-time pin (OTP) to the mobile number you provided. <br /> Please input the OTP in the filed
+        below to validate your application <br />
+        Failure to do so will void your order</h4>
+
+      <form [formGroup]="OtpForm" (ngSubmit)="onSubmit()" class="form-inline">
+
+        <div class="form-group mb-2 marleft"></div>
+
+        <div class="col-md-4 mb-3">
+            <div class="form-group">
+                <label class="control-label">One Time Pin:</label> &nbsp; &nbsp; &nbsp;
+                <input class="form-control" type="text" formControlName="otpNumber">
+                <div class="text-danger" *ngIf="otpNumber.invalid && (otpNumber.dirty || otpNumber.touched)">
+                    <div *ngIf="otpNumber.errors['required']">OTP is required</div>
+                    <div *ngIf="otpNumber.errors['minLength']">OTP Number must be 6 characters</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" [disabled]="OtpForm.invalid">Submit</button>
+        </div>
+      </form>
+
+      <div><br>
+        <br>
+      </div>
+
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Form Status: {{OtpForm.status}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted"> Form value</h6>
+            <pre>{{OtpForm.value | json}}</pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
