@@ -28,4 +28,24 @@ export interface ApiConfig {
       Account_No: string;
       OTPCode: string;
   }
+
+  export interface CustomerInformation{
+      id: number;
+      firstName: string;
+      middleName: string;
+      lastName: string;
+      email: string;
+      nbl: string;
+      svb: string;
+      street: string;
+      province: string;
+      city: string;
+      zipCode: number;
+      mobileNo: string;
+      landlineNo: number;
+      relationship: string;
+      Remarks: string;
+  }
+
+
   

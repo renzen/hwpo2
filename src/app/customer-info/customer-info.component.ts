@@ -116,7 +116,7 @@ export class CustomerInfoComponent implements OnInit {
     // 
     this.isValidFormSubmitted = true;
     this.loading = true;
-    this.router.navigate(['/customer-otp']);
+  //  this.router.navigate(['/customer-otp']);
 
     console.log(this.customerInform);
 

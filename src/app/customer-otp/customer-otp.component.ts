@@ -13,6 +13,7 @@ export class CustomerOtpComponent implements OnInit {
   OtpForm: FormGroup;
   loading =  false;
   submitted = false;
+  isValidFormSubmitted = false;
 
 constructor(private formBuilder: FormBuilder) { }
 
@@ -43,6 +44,7 @@ onSubmit() {
   }
 
   this.loading = true;
+  this.isValidFormSubmitted = true;
   // this.OtpForm.value()
   alert('SWAK!! :-)')
 }
