@@ -122,7 +122,14 @@ export class CustomerInfoComponent implements OnInit {
     // 
     this.isValidFormSubmitted = true;
     this.loading = true;
-    this.http.postCares(this.apiService.api.cares.getOTP, this.OTP, true).subscribe(
+
+    const a: OTPGenerator = {
+      Sender: '',
+      Account_No: '',
+      Mobile_No: '',
+      SpielCode: ''
+    };
+    this.http.postCares(this.apiService.api.cares.getOTP, a, true).subscribe(
       res => {
         this.logger.log(res);
       }

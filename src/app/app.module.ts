@@ -20,6 +20,7 @@ import { LoggerService } from './core/logger.service';
 import { HttpService } from './core/http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { CompareValidatorDirective } from './shared/compare-validator.directive'
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { HttpModule } from '@angular/http';
     HeaderComponent,
     FooterComponent,
     BannerComponent,
+    CompareValidatorDirective,
   ],
   imports: [
     BrowserModule,

@@ -174,7 +174,7 @@
                             <div class="select-container">
                                 <label class="control-label">How are you related? </label>
                                 <select class="RelationshipToOwner form-control" id="secondaryRelationship"
-                                    formControlName="relationship" [ngClass]="{ 'is-invalid': submitted && f.relationship.errors }">
+                                    formControlName="relationship" [ngClass]="{ 'is-invalid': submitted && relationship.errors }">
 
                                     <option disabled="disabled">Select Relationship</option>
                                     <option value="Child">Child</option>
