@@ -122,7 +122,7 @@ export class CustomerInfoComponent implements OnInit {
 
     const a: OTPGenerator = {
       Sender: this.apiService.constapicfg.OTPSender,
-      Account_No: '',
+      Account_No: '1111111111',
       Mobile_No: model.mobileNo,
       SpielCode: this.apiService.constapicfg.OTPSpielCode 
     };

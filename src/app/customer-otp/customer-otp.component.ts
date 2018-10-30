@@ -55,17 +55,19 @@ onSubmit(model:any) {
   this.loading = true;
   
   const a: OTPVerification = {
-    Account_No: '',
+    Account_No: '1111111111',
     OTPCode: model.otpNumber
    };
 
   this.http.postCares(this.apiService.api.cares.verifyOTP, a, true).subscribe(res => {
-    if (res._body == 'SUCCESS') {
+    if (res._body == '"SUCCESS"') {
      this.isValidFormSubmitted = true;
+     this.inValidFormSubmitted = false;
      this.loading = false;
     }
     else {
       this.inValidFormSubmitted = true;
+      this.isValidFormSubmitted = false;
       this.loading = false;
       this.logger.log(res);
       }
