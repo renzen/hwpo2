@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { CompareValidatorDirective } from './shared/compare-validator.directive';
 import { CopyDirective } from './shared/prevent-ccp.directive';
+import { NumberOnlyDirective } from './shared/number-only.directive';
 
 
 
@@ -35,6 +36,7 @@ import { CopyDirective } from './shared/prevent-ccp.directive';
     BannerComponent,
     CompareValidatorDirective,
     CopyDirective,
+    NumberOnlyDirective,
   ],
   imports: [
     BrowserModule,

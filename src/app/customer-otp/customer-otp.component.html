@@ -16,21 +16,15 @@
            </div>
 
         <div class="form-group mb-2 marleft">
-
           <label class="sr-only">One Time Pin:</label>
           <input type="text" readonly class="form-control-plaintext" value="One Time Pin:" style="text-align:right;margin-right: 10px;">
         </div>
 
         <div class="form-group mid-box">
-          <input type="text" class="form-control" formControlName="otpNumber">
-          <div *ngIf="otpNumber.invalid && (otpNumber.dirty || otpNumber.touched)" class="invalid-feedback">
-            <div *ngIf="otpNumber.errors['required']">OTP is required</div>
-            <div *ngIf="otpNumber.errors['minLength']" class="minlength">OTP Number must be 6 characters</div>
-          </div>
-         
+          <input type="text" class="form-control" formControlName="otpNumber" NumberOnly>
+            <div class="text-danger rbf-a" *ngIf="otpNumber.invalid && (otpNumber.dirty || otpNumber.touched)">OTP is required</div>
+            <div class="text-danger rbf-a" *ngIf="otpNumber.hasError('minLength') && (otpNumber.dirty || otpNumber.touched)" class="minlength">OTP Number must be 6 characters</div>
         </div>
-
-
 
         <div class="form-group">
           <button type="submit" class="btn btn-primary" [disabled]="OtpForm.invalid">Submit</button> &nbsp; &nbsp;

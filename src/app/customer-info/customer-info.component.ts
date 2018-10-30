@@ -52,6 +52,7 @@ export class CustomerInfoComponent implements OnInit {
       landlineNo: ['', Validators.required],
       relationship: ['', Validators.required],
       Remarks:[],
+      
     })
     
   }
