@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpService } from '../core/http.service';
+import { OTPVerification } from '../config/app-model.config';
+import { ConfigService } from '../core/config.service';
+import { LoggerService } from '../core/logger.service';
 
 
 
@@ -14,8 +18,14 @@ export class CustomerOtpComponent implements OnInit {
   loading =  false;
   submitted = false;
   isValidFormSubmitted = false;
+  inValidFormSubmitted = false;
 
-constructor(private formBuilder: FormBuilder) { }
+constructor(
+  private formBuilder: FormBuilder,
+  private http: HttpService,
+  private apiService: ConfigService,
+  private logger: LoggerService
+  ) { }
 
 ngOnInit() {
   this.insertOTP();
@@ -35,18 +45,34 @@ get otpNumber() {
 
 
 
-onSubmit() {
+onSubmit(model:any) {
   
-
   // stop here if form is invalid
   if (this.OtpForm.invalid) {
       return;
   }
 
   this.loading = true;
-  this.isValidFormSubmitted = true;
-  // this.OtpForm.value()
-  alert('SWAK!! :-)')
+  
+  const a: OTPVerification = {
+    Account_No: '',
+    OTPCode: model.otpNumber
+   };
+
+  this.http.postCares(this.apiService.api.cares.verifyOTP, a, true).subscribe(res => {
+    if (res._body == 'SUCCESS') {
+     this.isValidFormSubmitted = true;
+     this.loading = false;
+    }
+    else {
+      this.inValidFormSubmitted = true;
+      this.loading = false;
+      this.logger.log(res);
+      }
+      
+    }
+  );
+  
 }
 
 }

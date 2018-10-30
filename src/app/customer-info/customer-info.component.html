@@ -112,17 +112,6 @@
 
                     <div class="col-md-4 mb-3">
                         <div class="form-group">
-                            <label class="control-label">Province:</label>
-                            <input type="text" class="form-control" formControlName="province">
-                            <div class="text-danger" *ngIf="province.invalid && (province.dirty || province.touched)">
-                                    Province name is required
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-4 mb-3">
-                        <div class="form-group">
                             <label class="control-label">City:</label>
                             <input type="text" class="form-control" formControlName="city">
                             <div class="text-danger" *ngIf="city.invalid && (city.dirty || city.touched)">
@@ -130,6 +119,17 @@
                             </div>
                         </div>
                     </div>
+                    
+
+                    <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label class="control-label">Province:</label>
+                                <input type="text" class="form-control" formControlName="province">
+                                <div class="text-danger" *ngIf="province.invalid && (province.dirty || province.touched)">
+                                        Province name is required
+                                </div>
+                            </div>
+                        </div>
 
 
                     <div class="col-md-4 mb-3">

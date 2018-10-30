@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body#PLDT-COD {
     margin: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: Verdana,sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -11,8 +11,9 @@ body#PLDT-COD {
     min-width: inherit;
 }
 
-h1 { font-family: Lato; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Lato; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Lato; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Lato; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Lato; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+h1 { font-family: Verdana,sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Verdana,sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Verdana,sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Verdana,sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Verdana,sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
 
+p {margin: 0 !important}
 .success p {
     margin: 0 auto;
     background: #58bb58;
@@ -28,4 +29,8 @@ h1 { font-family: Lato; font-size: 24px; font-style: normal; font-variant: norma
 .form-group.container.success {
     margin: 0 !important;
     padding: 0;
+}
+
+.alert-danger, .alert-success {
+ width: 100%;
 }

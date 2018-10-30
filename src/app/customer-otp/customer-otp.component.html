@@ -7,13 +7,25 @@
         below to validate your application <br />
         Failure to do so will void your order</h4>
 
-      <form [formGroup]="OtpForm" (ngSubmit)="onSubmit()" class="form-inline">
+      <form [formGroup]="OtpForm" (ngSubmit)="onSubmit(OtpForm.value)" class="form-inline">
 
           <div class="form-group container success">
-              <p *ngIf="isValidFormSubmitted" [ngClass]="'success'">
-                <i class="fa fa-check" aria-hidden="true"></i>  OTP Submitted Successfully.
-              </p>
-           </div>
+              <div *ngIf="isValidFormSubmitted" [ngClass]="'success'" class="alert alert-success">
+                <i class="fa fa-check" aria-hidden="true"></i>  You have Successfully validated your application. <br> Your Home WIFI kit should arrive within 5 to 7 days. <br>
+                Please prepare a cash payment of P1,995 <br><br>
+                Please call 171 should you have any concern.
+              </div>
+          </div>
+          
+          <div class="form-group container unsuccessful">
+              <div *ngIf="inValidFormSubmitted" [ngClass]="'error'" class="alert alert-danger">
+               <p> <i class="fa fa-times" aria-hidden="true"></i> The OTP You entered is incorrect.  
+                Please try again
+                </p>
+              </div>
+          </div>
+
+         
 
         <div class="form-group mb-2 marleft">
           <label class="sr-only">One Time Pin:</label>
@@ -21,13 +33,13 @@
         </div>
 
         <div class="form-group mid-box">
-          <input type="text" class="form-control" formControlName="otpNumber" NumberOnly>
+          <input type="text" class="form-control" formControlName="otpNumber" NumberOnly> 
             <div class="text-danger rbf-a" *ngIf="otpNumber.invalid && (otpNumber.dirty || otpNumber.touched)">OTP is required</div>
             <div class="text-danger rbf-a" *ngIf="otpNumber.hasError('minLength') && (otpNumber.dirty || otpNumber.touched)" class="minlength">OTP Number must be 6 characters</div>
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-primary" [disabled]="OtpForm.invalid">Submit</button> &nbsp; &nbsp;
+            &nbsp; &nbsp;<button type="submit" class="btn btn-primary" [disabled]="OtpForm.invalid">Submit</button> &nbsp; &nbsp;
           <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
        </div>
 
