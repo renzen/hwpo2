@@ -1,6 +1,7 @@
 import {Injectable } from '@angular/core';
 import { config } from '../config/app.config';
 import { apiConfig } from '../config/app-api.config';
+import { constantsConfig } from '../config/app-constant.config';
 
 @Injectable()
 export class ConfigService {
@@ -9,6 +10,7 @@ export class ConfigService {
   public endpointCares: any;
   public endpointCSP: any;
   public api: any;
+  public constapicfg: any;
 
   constructor() { 
     //APP
@@ -19,6 +21,9 @@ export class ConfigService {
 
     //API
     this.api = apiConfig;
+
+    //Constant
+    this.constapicfg = constantsConfig;
 
   }
 }
