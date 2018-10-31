@@ -30,11 +30,11 @@ export interface ApiConfig {
   }
 
   export interface CustomerInformation{
-      id: number;
       firstName: string;
       middleName: string;
       lastName: string;
       email: string;
+      AccountNumber: number;
       nbl: string;
       svb: string;
       street: string;

@@ -12,10 +12,18 @@
         <div class="col-md-12 personal-info">
 
             <div class="form-group container success">
-                <p *ngIf="isValidFormSubmitted" [ngClass]="'success'">
+                <div *ngIf="isValidFormSubmitted" [ngClass]="'success'" class="alert alert-success">
                   <i class="fa fa-check" aria-hidden="true"></i>  Your Details Submitted Successfully.
-                </p>
+                </div>
              </div>
+
+             <div class="form-group container unsuccessful">
+                    <div *ngIf="inValidFormSubmitted" [ngClass]="'error'" class="alert alert-danger">
+                     <p> <i class="fa fa-times" aria-hidden="true"></i> Unable to submit your request.  
+                      Please try again
+                      </p>
+                    </div>
+                </div>
                 <legend id="PersonalDetails"><span>Personal Details</span></legend>
                 <hr>
                 <br>
@@ -72,6 +80,19 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-4 mb-3">
+                            <div class="form-group">
+                                <label class="control-label">Account no.</label>
+                                <input class="form-control" type="email" formControlName="AccountNumber">
+                                <div class="text-danger" *ngIf="AccountNumber.invalid && (AccountNumber.dirty || AccountNumber.touched)">
+                                    <div *ngIf="AccountNumber.errors['required']">Account number is required</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                 </div>
 
                 <div class="form-row">

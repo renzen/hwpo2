@@ -60,10 +60,12 @@ onSubmit(model:any) {
    };
 
   this.http.postCares(this.apiService.api.cares.verifyOTP, a, true).subscribe(res => {
-    if (res._body == '"SUCCESS"') {
+    if (res._body == '""') {
+     const data = localStorage.getItem('customerInfo');
      this.isValidFormSubmitted = true;
      this.inValidFormSubmitted = false;
      this.loading = false;
+     alert (data);
     }
     else {
       this.inValidFormSubmitted = true;
